@@ -17,7 +17,7 @@ describe("registerSchema", () => {
     })
     expect(result.success).toBe(false)
     if (!result.success) {
-      expect(result.error.issues[0]?.message).toBe("请输入有效邮箱")
+      expect(result.error.issues[0]?.message).toBe("请输入有效邮箱!")
     }
   })
 
