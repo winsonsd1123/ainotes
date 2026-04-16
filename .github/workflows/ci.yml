@@ -4,7 +4,8 @@ on:
   push:
     branches: [main, master, preview]
   pull_request:
-    branches: [main, master, preview]
+    branches:
+      - main
 
 jobs:
   unit:
