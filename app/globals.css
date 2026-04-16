@@ -117,6 +117,38 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* 落地页：系统中文衬线/无衬线，避免构建期依赖外网字体 */
+:root {
+  --landing-sans: ui-sans-serif, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", sans-serif;
+  --landing-serif: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+}
+
+@keyframes landing-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.125rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .animate-landing-in {
+    animation: landing-fade-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .font-landing-sans {
+    font-family: var(--landing-sans);
+  }
+
+  .font-landing-serif {
+    font-family: var(--landing-serif);
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
